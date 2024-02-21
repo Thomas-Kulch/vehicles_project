@@ -1,30 +1,17 @@
-#Store functions for cleaning data in here.
-
+'''
+ Store functions for cleaning data in here.
+'''
 #create a function for assigning default values of cylinders for each car type.
 def cyl(x):
-    if x == 'SUV':
+    if x in ['SUV','convertible','coupe','mini-van','offroad','van']:
         return 6
     elif x == 'bus':
         return 10
-    elif x == 'convertible':
-        return 6
-    elif x == 'coupe':
-        return 6
     elif x == 'hatchback':
         return 4
-    elif x == 'mini-van':
-        return 6
-    elif x == 'offroad':
-        return 6
-    elif x == 'pickup':
+    elif x in ['pickup','truck']:
         return 8
-    elif x == 'sedan':
-        return 5
-    elif x == 'truck':
-        return 8
-    elif x == 'van':
-        return 6
-    elif x == 'wagon':
+    elif x == ['sedan','wagon']:
         return 5
     else:
         return 6 #this is for 'other' type

@@ -2,13 +2,13 @@ import pandas as pd
 from data import functions
 
 class DataCleaner:
-    def __init__(self,df):
-        self.df = df
+    def __init__(self,data):
+        self.data = data
 
     def cleaned_df(self):
 
         cleaned_df = self
-        
+
         #Fix data types and missing values
         #price
         cleaned_df['price'] = cleaned_df['price'].astype(float)
