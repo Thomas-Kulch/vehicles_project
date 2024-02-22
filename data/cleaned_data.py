@@ -33,8 +33,11 @@ class DataCleaner:
 
         #add the year_range column
         cleaned_df['year_range'] = cleaned_df['model_year'].apply(functions.year_range)
+
+        #add condition column
+        cleaned_df['condition'] = cleaned_df['odometer'].apply(functions.condition)
         
-        #Add age column
+        #add age column
         cleaned_df['age'] = 2024 - cleaned_df['model_year']
         
         return cleaned_df

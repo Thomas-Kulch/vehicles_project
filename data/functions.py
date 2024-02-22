@@ -30,3 +30,19 @@ def year_range(x):
         return '2001-2020'
     else:
         return 'unknown'
+
+
+#function for condition based on odometer reading
+def condition(x):
+    if 0 <= x <= 200:
+        return 'new'
+    elif 200 < x <= 5000:
+        return 'like new'
+    elif 5000 < x <= 20000:
+        return 'good'
+    elif 20000 < x <= 50000:
+        return 'used'
+    elif 50000 < x <= 100000:
+        return 'very used'
+    else:
+        return 'heavily used'
