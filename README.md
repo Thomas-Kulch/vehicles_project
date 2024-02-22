@@ -19,7 +19,7 @@ To install and run this project on your local machine:
 
     1. Download the zip files
 
-![img_2](..\images\img_2.png)
+![img_2](images/img_2.png)
 
     2. Open the project folder in your IDE
 
@@ -27,11 +27,11 @@ To install and run this project on your local machine:
 
     4. run the command "streamlit run app.py"
 
-![img_3](..\images\img_3.png)
+![img_3](images/img_3.png)
 
     5. Click on the local link path in the terminal output
 
-![img_4](..\images\img_4.png)
+![img_4](images/img_4.png)
 
 
 ### Troubleshooting
