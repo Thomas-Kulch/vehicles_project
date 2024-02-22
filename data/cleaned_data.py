@@ -9,6 +9,9 @@ class DataCleaner:
 
         cleaned_df = self
 
+        #add age column. Doing this before filling the missing age values so the NaN model_year's aren't included in the calculation and the visualizations wont be affected.
+        cleaned_df['age'] = 2024 - cleaned_df['model_year']
+
         #Fix data types and missing values
         #price
         cleaned_df['price'] = cleaned_df['price'].astype(float)
@@ -36,9 +39,6 @@ class DataCleaner:
 
         #add condition column
         cleaned_df['condition'] = cleaned_df['odometer'].apply(functions.condition)
-        
-        #add age column
-        cleaned_df['age'] = 2024 - cleaned_df['model_year']
         
         return cleaned_df
 
