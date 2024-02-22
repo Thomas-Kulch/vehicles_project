@@ -1,6 +1,6 @@
 # CarMin - Used Vehicles Project
 
-![img_1](\images\img_1.jpg)
+![img_1](images\img_1.jpg)
  
  In this project, I use a used cars inventory dataset to create some useful visualizations that can help with shopping for cars.
 
