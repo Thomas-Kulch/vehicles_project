@@ -30,6 +30,9 @@ class DataCleaner:
 
         #drop the filler columns
         cleaned_df.drop(['filler','filler1','filler2'],axis=1,inplace=True)
+
+        #add the year_range column
+        cleaned_df['year_range'] = cleaned_df['model_year'].apply(functions.year_range)
         
         return cleaned_df
 

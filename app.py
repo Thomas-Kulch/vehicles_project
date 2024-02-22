@@ -6,4 +6,4 @@ from data import DataCleaner
 
 df = pd.read_csv('vehicles_us.csv') 
 df = DataCleaner.cleaned_df(df)
-print(df.sample(15))
+print(df.sample(5))
