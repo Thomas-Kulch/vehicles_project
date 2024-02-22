@@ -46,3 +46,16 @@ def condition(x):
         return 'very used'
     else:
         return 'heavily used'
+
+#alternative method for filling the NaN cylinders. I will grab the median cylinder from the dataframe grouped by model and model_year and use that value. 
+#this still leaves a few NaN values, so I will use this along with my original function.
+
+#this creates some values like 5.5 and 7 cylinder engines which do not exist in cars.
+def cylinder_estimation(df):
+    # Calculate median cylinders grouped by car model and model year
+    median_cylinders = df.groupby(['model', 'model_year'])['cylinders'].transform('median')
+
+    # Fill NaN values with the calculated median
+    df['cylinders'] = df['cylinders'].fillna(median_cylinders)
+    
+    return df

@@ -7,7 +7,13 @@ class DataCleaner:
 
     def cleaned_df(self):
 
-        cleaned_df = self
+        df = self
+
+        #sort the records by the records with less NaN values to be on top
+        df_sorted = df.iloc[df.isnull().sum(axis=1).argsort()]
+
+        #drop duplicates based on the columns model, price, model_year,odometer which keeping the first instance
+        cleaned_df = df_sorted.drop_duplicates(subset=['model','price','model_year','odometer'],keep='first')
 
         #add age column. Doing this before filling the missing age values so the NaN model_year's aren't included in the calculation and the visualizations wont be affected.
         cleaned_df['age'] = 2024 - cleaned_df['model_year']
@@ -22,6 +28,8 @@ class DataCleaner:
         #model_year values
         cleaned_df['model_year'] = cleaned_df['model_year'].fillna(0).astype(int)
         #cylinders
+        cleaned_df = functions.cylinder_estimation(cleaned_df)
+        #filling the remaining missing values with average cylinder by car type
         cleaned_df['cylinders'] = cleaned_df['cylinders'].fillna(cleaned_df['type'].apply(functions.cyl)).astype(int)
 
         #Add make column from model

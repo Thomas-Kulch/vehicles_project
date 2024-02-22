@@ -11,8 +11,8 @@ df = DataCleaner.cleaned_df(df)
 
 ##Variables
 
-unique_manufacturer = df['make'].unique()
-unique_condition = df['condition'].unique()
+unique_manufacturer = sorted(df['make'].unique())
+unique_condition = sorted(df['condition'].unique())
 listed_one_week = df[df['days_listed'] <= 7]
 cheap_cars = df[df['price'] < 10000]
 min_year,max_year = int(df[df['model_year'] > 0]['model_year'].min()), int(df['model_year'].max())
