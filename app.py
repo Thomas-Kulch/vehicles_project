@@ -64,9 +64,9 @@ reordered_df.rename(columns={'make':'Make',
                              'age':'Car Age (Years)'},inplace=True)
 
 #display the dataframe
-st.dataframe(reordered_df.set_index(reordered_df.columns[0]).style.format({'Odometer':'{:,}',
-                                                                           'Model Year':'{}',
-                                                                           'Price':'{:,.2f}'}))
+st.dataframe(reordered_df.style.format({'Odometer':'{:,}',
+                                        'Model Year':'{}',
+                                        'Price':'{:,.2f}'}))
 
 
 ##Streamlit - Histogram for Types of Cars by Manufacturer
