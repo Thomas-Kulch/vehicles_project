@@ -42,7 +42,7 @@ else:
     displayed_df = df[(df.make == selection) & (df.condition == selection_1) & (df.model_year.isin(actual_range))]
 
 #change the order of the indexes
-new_order = [13,2,1,8,0,3,6,4,5,7,9,10,11,12,14,15]
+new_order = [14,2,1,8,0,3,6,4,5,7,9,10,11,12,13,15]
 reordered_df = displayed_df.iloc[:,new_order]
 
 #renaming dataframe columns to clean it up on the app
@@ -64,9 +64,10 @@ reordered_df.rename(columns={'make':'Make',
                              'age':'Car Age (Years)'},inplace=True)
 
 #display the dataframe
-st.dataframe(reordered_df.style.format({'Odometer':'{:,}',
-                                        'Model Year':'{}',
-                                        'Price':'{:,.2f}'}))
+st.dataframe(reordered_df.set_index(reordered_df.columns[0]).style.format({'Odometer':'{:,}',
+                                                                           'Model Year':'{}',
+                                                                           'Car Age (Years)':'{:}',
+                                                                           'Price':'{:,.2f}'}))
 
 
 ##Streamlit - Histogram for Types of Cars by Manufacturer
