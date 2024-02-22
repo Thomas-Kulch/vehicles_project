@@ -37,4 +37,5 @@ To install and run this project on your local machine:
 ### Troubleshooting
 
 If you get an error with streamlit, make sure the installation path of streamlit is in your PATH environment variable before running.
+
  Here's some instructions for how to edit the environment variable: https://www.java.com/en/download/help/path.html
