@@ -121,7 +121,7 @@ st.markdown('#### Mileage vs. Price')
 
 
 #make the scatterplot
-fig2 = px.scatter(df,
+fig2 = px.scatter(df[df['age'].notna()],
                   x='odometer',
                   y='price',
                   color='age',
