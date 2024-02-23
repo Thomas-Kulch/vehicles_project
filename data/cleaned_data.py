@@ -13,7 +13,7 @@ class DataCleaner:
         df_sorted = df.iloc[df.isnull().sum(axis=1).argsort()]
 
         #drop duplicates based on the columns model, price, model_year,odometer which keeping the first instance
-        cleaned_df = df_sorted.drop_duplicates(subset=['model','price','model_year','odometer'],keep='first')
+        cleaned_df = df_sorted.drop_duplicates(subset=['model','price','model_year','cylinders','fuel','transmission','type','is_4wd','paint_color'],keep='first')
 
         #add age column. Doing this before filling the missing age values so the NaN model_year's aren't included in the calculation and the visualizations wont be affected.
         cleaned_df['age'] = 2024 - cleaned_df['model_year']
