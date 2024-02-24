@@ -46,7 +46,7 @@ class DataCleaner:
         #sort the records by the records with less NaN values to be on top
         df_sorted = cleaned_df.iloc[cleaned_df.isnull().sum(axis=1).argsort()]
 
-        #drop duplicates based on the columns model, price, model_year,odometer which keeping the first instance
+        #drop duplicates based on the specified columns while keeping the first instance
         cleaned_df_no_dups = df_sorted.drop_duplicates(subset=['model','price','model_year','cylinders','fuel','transmission','type','is_4wd','paint_color','date_posted'],keep='first')
 
         
