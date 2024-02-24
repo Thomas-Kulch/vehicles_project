@@ -47,7 +47,7 @@ class DataCleaner:
         df_sorted = cleaned_df.iloc[cleaned_df.isnull().sum(axis=1).argsort()]
 
         #drop duplicates based on the columns model, price, model_year,odometer which keeping the first instance
-        cleaned_df_no_dups = df_sorted.drop_duplicates(subset=['model','price','model_year','cylinders','fuel','transmission','type','is_4wd','paint_color','date_posted'],keep='first')
+        cleaned_df_no_dups = df_sorted.drop_duplicates(subset=['model','price','model_year','cylinders','odometer','fuel','transmission','type','is_4wd','paint_color','date_posted'],keep='first')
 
         
         return cleaned_df_no_dups
